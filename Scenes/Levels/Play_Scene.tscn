@@ -88,7 +88,7 @@ emission_shape = 2
 emission_box_extents = Vector3( 960, 540, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 2, 0 )
-angular_velocity = 4.64236e-16
+angular_velocity = 4.64236e-016
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 10.0
@@ -238,7 +238,6 @@ amount = 500
 preprocess = 600.0
 visibility_rect = Rect2( -960, -540, 1920, 1080 )
 process_material = SubResource( 21 )
-
 [connection signal="button_up" from="Play" to="." method="_on_Play_button_up"]
 [connection signal="button_up" from="Shop" to="." method="_on_Shop_button_up"]
 [connection signal="button_up" from="Credits" to="." method="_on_Credits_button_up"]
