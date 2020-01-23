@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Enemies/LilSkeleton.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Enemies/LilSkeleton/skeleton-0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Enemies/LilSkeleton/skeleton-1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Enemies/LilSkeleton/skeleton-2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Enemies/LilSkeleton/skeleton-3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Enemies/LilSkeleton/skeleton-4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Enemies/LilSkeleton/skeleton-5.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45, 47.1393 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Running",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50, 50 )
+
+[node name="LilSkeleton" type="KinematicBody2D"]
+editor/display_folded = true
+position = Vector2( 0.330544, 3.08512 )
+scale = Vector2( 0.25, 0.25 )
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 1 )
+chasing_distance = 600
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.20364, -37.4622 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1.3222, -29.5441 )
+frames = SubResource( 2 )
+animation = "Running"
+frame = 3
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.3222, -37.4622 )
+shape = SubResource( 3 )
+
+[node name="Cliff" type="RayCast2D" parent="."]
+position = Vector2( 28.6778, -29.0883 )
+enabled = true
+collision_mask = 3
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

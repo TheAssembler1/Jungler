@@ -1,0 +1,10 @@
+##RULES FOR TAKING DAMAGE OR GIVING DAMAGE##
+
+Node or object recieving giving damage should detect the collision and only take health from the other.
+You should have a variable called attack_damage.
+Then use area.get_parent.object_health.
+Then just substract this result from your attack_damage value.
+The node hitting you should have a variable called attack_damage. Just subtract your health from this variable.
+Player has an attack_damage variable unique to each node that can give damage.
+Please use that variable to substract from the objects health that is receiving the damage.
+If you do not understand conact me or look at the LilSkeleton.tscn.

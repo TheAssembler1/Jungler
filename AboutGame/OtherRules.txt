@@ -1,0 +1,23 @@
+##OTHER RULES##
+
+#placing nodes into groups
+Name the group with a capitol letter for each word.
+DO NOT!!! put underlines between each word.
+Player should detect area2D on enemies.
+Enemies should detect the player area2D.
+
+#naming scenes and nodes
+Only name the root off you scene what you want.
+DO NOT!!! make children of the root unique names.
+Leave them as the default.
+Unless you need to differentiate between two identical type nodes.
+
+#naming animations
+Name animations by making every new word a capitol letter.
+Do not put underlines between new words.
+
+#audio rules
+AudioStreamPlayers2D should be named exactly the same as the animation that is playing.
+Node should have a name ending with Sound.
+
+

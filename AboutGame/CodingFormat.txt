@@ -1,0 +1,11 @@
+##RULES FOR WRITING CODE FOR THE GAME##
+
+
+#function rules
+Each new word in a function must start with a capitol letter and have an underline between each word.
+
+#variable rules
+Each new variable must be lowercase and have an underline between each word.
+
+#comment rules
+Every comment must be in complete lowercase.

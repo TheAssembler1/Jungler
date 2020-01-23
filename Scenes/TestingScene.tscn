@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Other/GUI_Controller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Other/Save_Controller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Enemy/LilSkeleton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemy/Minotaur.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="TestingScene" type="Node2D"]
+
+[node name="GUI_Controller" parent="." instance=ExtResource( 1 )]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 568.516, 1037.71 )
+scale = Vector2( 300, 1 )
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 643.056, 544.299 )
+
+[node name="Save_Controller" parent="." instance=ExtResource( 4 )]
+
+[node name="LilSkeleton" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1331.93, 801.769 )
+
+[node name="LilSkeleton2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 151.744, 613.858 )
+
+[node name="LilSkeleton3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 302.837, 788.694 )
+
+[node name="LilSkeleton4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 43.8201, 870.716 )
+
+[node name="LilSkeleton5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 367.591, 654.869 )
+
+[node name="LilSkeleton6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1401.5, 687.246 )
+
+[node name="LilSkeleton7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1075.57, 777.902 )
+
+[node name="LilSkeleton8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 993.547, 575.006 )
+
+[node name="LilSkeleton9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1354.01, 605.224 )
+
+[node name="Minotaur" parent="." instance=ExtResource( 6 )]
+position = Vector2( 240.756, 616.313 )

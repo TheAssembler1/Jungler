@@ -1,0 +1,21 @@
+TODO LIST
+
+Grant:
+	1. Music
+	2. Sprites
+	4. Make 9 Tileset Levels
+
+Nerdwerd:
+	1. Sprites
+	2. More Enemies
+	3. Get Old Questions
+	4. Buy System
+	5. Make Title For PlayScene
+
+TheAssembler1:
+	1. Fix Gui
+	2. Pause Screen
+	3. Question Functionality With Boss
+	4. Save System
+	
+	

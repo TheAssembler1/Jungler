@@ -1,0 +1,271 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Player/Player.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/Player/RunningSound.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Player/FallingSound.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Player/JumpingSound.wav" type="AudioStream" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11, 16.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.7507, 17.0728 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.1998, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 12.5594 )
+
+[sub_resource type="Animation" id=5]
+length = 0.5
+step = 0.04
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.08, 0.16, 0.24, 0.32, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 42, 43, 44, 45, 46, 47 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Attacking1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.08, 0.16, 0.24, 0.32, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, true, true, true ]
+}
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Attacking2/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, true, true, true, false, true, true, true ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 22, 23 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.48
+step = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.12, 0.24, 0.36 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 16, 17 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 12, 13 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "dead"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "player_death"
+} ]
+}
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 1, 0.0588235, 1 )
+border_width_left = 50
+border_width_right = 50
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 1, 0, 0, 1 )
+border_width_left = 50
+border_width_right = 50
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+z_index = 1
+script = ExtResource( 1 )
+player_jump_power = 800
+gravity = 25
+
+[node name="GeneralCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GeneralCollision"]
+shape = SubResource( 1 )
+
+[node name="Attacking1" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacking1"]
+position = Vector2( 20.6523, -0.919322 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Attacking2" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacking2"]
+position = Vector2( 20.4363, 3.05476 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -12 )
+texture = ExtResource( 2 )
+vframes = 16
+hframes = 7
+frame = 68
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attacking1 = SubResource( 5 )
+anims/Attacking2 = SubResource( 6 )
+anims/Falling = SubResource( 7 )
+anims/Idle = SubResource( 8 )
+anims/Jumping = SubResource( 9 )
+anims/Running = SubResource( 10 )
+anims/dead = SubResource( 11 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -17.0
+margin_top = -20.0
+margin_right = 3457.0
+margin_bottom = 580.0
+rect_scale = Vector2( 0.01, 0.005 )
+custom_styles/fg = SubResource( 12 )
+custom_styles/bg = SubResource( 13 )
+max_value = 1000.0
+value = 1000.0
+percent_visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="Sounds" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="RunningSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="Attacking1Sound" type="AudioStreamPlayer2D" parent="Sounds"]
+
+[node name="Attacking2Sound" type="AudioStreamPlayer2D" parent="Sounds"]
+
+[node name="FallingSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 4 )
+volume_db = -15.0
+
+[node name="IdleSound" type="AudioStreamPlayer2D" parent="Sounds"]
+
+[node name="JumpingSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 5 )
+volume_db = -15.0
+pitch_scale = 1.2
+
+[connection signal="area_entered" from="GeneralCollision" to="." method="_on_GeneralCollision_area_entered"]
+[connection signal="area_entered" from="Attacking1" to="." method="_on_Attacking1_area_entered"]
+[connection signal="area_entered" from="Attacking2" to="." method="_on_Attacking2_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

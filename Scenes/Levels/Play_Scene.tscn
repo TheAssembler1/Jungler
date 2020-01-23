@@ -1,0 +1,250 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Scripts/Other/Play_Scene.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/manaspc.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/Other/Save_Controller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Backgrounds/DemonWoods/Main Menu.jpg" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 60
+outline_size = 2
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 60
+outline_size = 2
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.901961, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 1, 0.901961, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 1, 0.901961, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+
+[sub_resource type="ParticlesMaterial" id=21]
+emission_shape = 2
+emission_box_extents = Vector3( 960, 540, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 2, 0 )
+angular_velocity = 4.64236e-16
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 10.0
+scale_random = 1.0
+color = Color( 0.941176, 0.941176, 0.941176, 1 )
+
+[node name="Play_Scene" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Play" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+
+[node name="Shop" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Shop"
+
+[node name="Credits" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 2 )
+text = "Credits"
+
+[node name="Help" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 3 )
+text = "How To Play"
+
+[node name="Exit" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 4 )
+text = "Exit"
+
+[node name="Back" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 5 )
+text = "Back"
+
+[node name="HelpTitle" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "How To Play"
+align = 1
+
+[node name="HelpContent" type="Label" parent="."]
+margin_right = 1000.0
+margin_bottom = 833.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "To move left or right use the 'a' and 'd' key respectively. The 'w' and space bar are used to jump. Use the left click on the mouse for a quick slash, and a right click onthe ouse to perform a spinning attack."
+align = 1
+autowrap = true
+
+[node name="CreditsTitle" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Credits"
+align = 1
+
+[node name="CreditsContent" type="Label" parent="."]
+margin_right = 1000.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "This game was created by TheAssembler1, Nerdwerd, and Goldenharp
+
+Created with the Godot Game Engine"
+align = 1
+autowrap = true
+
+[node name="Save_Controller" parent="." instance=ExtResource( 4 )]
+
+[node name="Speed" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 10 )
+text = "Speed"
+
+[node name="Jump" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 11 )
+text = "Jump"
+
+[node name="Attack" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 12 )
+text = "Attack"
+
+[node name="Coins_Required" type="Label" parent="."]
+margin_right = 800.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 13 )
+align = 1
+autowrap = true
+
+[node name="Coins_Acquired" type="Label" parent="."]
+margin_right = 800.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 14 )
+align = 1
+autowrap = true
+
+[node name="Main Menu" type="Sprite" parent="."]
+position = Vector2( 960.755, 537.72 )
+scale = Vector2( 3.8, 4.2 )
+z_index = -9
+texture = ExtResource( 5 )
+
+[node name="SpeedBar" type="ProgressBar" parent="."]
+margin_right = 4.0
+margin_bottom = 14.0
+custom_styles/fg = SubResource( 15 )
+custom_styles/bg = SubResource( 16 )
+percent_visible = false
+
+[node name="JumpBar" type="ProgressBar" parent="."]
+margin_right = 4.0
+margin_bottom = 14.0
+custom_styles/fg = SubResource( 17 )
+custom_styles/bg = SubResource( 18 )
+percent_visible = false
+
+[node name="AttackBar" type="ProgressBar" parent="."]
+margin_right = 4.0
+margin_bottom = 14.0
+custom_styles/fg = SubResource( 19 )
+custom_styles/bg = SubResource( 20 )
+percent_visible = false
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 960, 540 )
+z_index = -2
+amount = 500
+preprocess = 600.0
+visibility_rect = Rect2( -960, -540, 1920, 1080 )
+process_material = SubResource( 21 )
+
+[connection signal="button_up" from="Play" to="." method="_on_Play_button_up"]
+[connection signal="button_up" from="Shop" to="." method="_on_Shop_button_up"]
+[connection signal="button_up" from="Credits" to="." method="_on_Credits_button_up"]
+[connection signal="button_up" from="Help" to="." method="_on_Help_button_up"]
+[connection signal="button_up" from="Exit" to="." method="_on_Exit_button_up"]
+[connection signal="button_up" from="Back" to="." method="_on_Back_button_up"]
+[connection signal="button_up" from="Speed" to="." method="_on_Speed_button_up"]
+[connection signal="button_up" from="Jump" to="." method="_on_Jump_button_up"]
+[connection signal="button_up" from="Attack" to="." method="_on_Attack_button_up"]

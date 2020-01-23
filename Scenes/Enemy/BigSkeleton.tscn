@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Enemies/LilSkeleton.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Enemies/BigSkeleton/BigSkeletonSpriteSheet.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.99399, 14.1339 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 19, 20, 22, 24, 26, 27, 28, 29, 30, 31, 35 ]
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 36, 37, 39 ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 8.07065, 13.2106 )
+
+[node name="BigSkeleton" type="KinematicBody2D"]
+scale = Vector2( 0.25, 0.25 )
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 1 )
+chasing_distance = 600
+
+[node name="Gerneral Collision" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gerneral Collision"]
+position = Vector2( -11.3879, 3.69336 )
+shape = SubResource( 1 )
+
+[node name="Attack" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2( 3.69336, 4.00114 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 3 )
+anims/Death = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+vframes = 3
+hframes = 18
+frame = 39
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -12.0034, 3.69335 )
+shape = SubResource( 6 )
+[connection signal="area_entered" from="Gerneral Collision" to="." method="_on_Area2D_area_entered"]
