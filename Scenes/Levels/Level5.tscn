@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Other/GUI_Controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Other/Save_Controller.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Backgrounds/DemonWoods/CastleBackground1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Backgrounds/DemonWoods/CastleBackground2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Backgrounds/DemonWoods/CastleBackground3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Backgrounds/DemonWoods/CastleBackground4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Backgrounds/DemonWoods/CastleBackground5.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Backgrounds/DemonWoods/CastleBackground6.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1000, 10 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -19,7 +28,20 @@ animations = [ {
 [node name="Save_Controller" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 388.125, 715.5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 43.875, 172.125 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground"]
+position = Vector2( 956.812, 541.688 )
+scale = Vector2( 2.91902, 2.85805 )
 frames = SubResource( 1 )
+frame = 1
+speed_scale = 3.0
 playing = true
