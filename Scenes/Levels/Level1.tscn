@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Other/Save_Controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Other/GUI_Controller.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Enemy/Spikes.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/WorldObjects/Exit_Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sounds/Levels/Level1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/Other/Question_Controller.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 2
@@ -176,3 +177,21 @@ position = Vector2( 11164.3, 455.531 )
 pause_mode = 2
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="Question_Controller" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1042.58, 677.425 )
+
+[node name="Question_Controller2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2239.94, 887.079 )
+
+[node name="Question_Controller3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4727.84, 859.125 )
+
+[node name="Question_Controller4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 3931.15, 891.738 )
+
+[node name="Question_Controller5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5895.69, 1255.14 )
+
+[node name="Question_Controller6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 8076.1, 761.287 )

@@ -93,12 +93,12 @@ hframes = 8
 frame = 21
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
 collision_layer = 0
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -1.60979, 4.93668 )
+scale = Vector2( 1, 20 )
 shape = SubResource( 4 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
