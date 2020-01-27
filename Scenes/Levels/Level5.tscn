@@ -10,10 +10,10 @@
 [ext_resource path="res://Sprites/Backgrounds/DemonWoods/CastleBackground5.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Backgrounds/DemonWoods/CastleBackground6.png" type="Texture" id=9]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000, 10 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -34,14 +34,13 @@ position = Vector2( 388.125, 715.5 )
 position = Vector2( 43.875, 172.125 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground"]
 position = Vector2( 956.812, 541.688 )
 scale = Vector2( 2.91902, 2.85805 )
-frames = SubResource( 1 )
-frame = 1
+frames = SubResource( 2 )
 speed_scale = 3.0
 playing = true
