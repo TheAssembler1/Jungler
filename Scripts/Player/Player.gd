@@ -7,6 +7,7 @@ export var gravity = 12
 var motion = Vector2()
 var floor_normal = Vector2(0, -1)
 export var object_health = 1000
+export var boss_stage = false
 
 #reg booleans
 var up = false
@@ -47,7 +48,7 @@ export var bigskeleton_attacking1_damage = 3000
 export var bigskeleton_attacking2_damage = 2500
 
 #damage var for Minotaur
-export var minotaur_body_attack_damage = 500
+export var minotaur_body_attack_damage = 0
 export var minotaur_attacking1_damage = 3000
 export var minotaur_attacking2_damage = 2500
 
@@ -58,6 +59,8 @@ var has_died = false
 func _ready():
 	#adding to playing group
 	$GeneralCollision.add_to_group("Player")
+	if boss_stage:
+		$Camera2D.queue_free()
 	pass # Replace with function body.
 
 #called every frame. 'delta' is the elapsed time since the previous frame.

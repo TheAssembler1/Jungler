@@ -9,6 +9,10 @@ var motion = Vector2()
 var normal_floor = Vector2()
 
 
+var mod = 1
+export var mod_change = .01
+
+
 export var chasing_distance = 800
 export var hitting_distance = 60
 export var coin_value = 50
@@ -17,6 +21,7 @@ var cliff = false
 
 var left_player_side = -60
 var right_player_side = 60
+export var dead = false
 
 #variables attaches to the player
 onready var player = get_parent().get_node("Player")
@@ -39,6 +44,12 @@ func _process(delta):
 		print("Killing Minotaur")
 		#setting up and adding particle effect animation
 		$AnimationPlayer.play("Death")
+		dead = true
+		
+		self.modulate = Color(mod, mod, mod)
+		if mod >= 0:
+			mod -= mod_change
+		
 		
 	
 	#follows the player and does movement
@@ -57,7 +68,7 @@ func Follow_Player():
 	elif position.x > player.position.x:
 		$Cliff.position.x = left_player_side
 	
-	if $Cliff.is_colliding():
+	if $Cliff.is_colliding() && !dead:
 		cliff = false
 		if position.x < player.position.x:
 			$Sprite.flip_h = true

@@ -264,7 +264,6 @@ volume_db = -15.0
 stream = ExtResource( 5 )
 volume_db = -15.0
 pitch_scale = 1.2
-
 [connection signal="area_entered" from="GeneralCollision" to="." method="_on_GeneralCollision_area_entered"]
 [connection signal="area_entered" from="Attacking1" to="." method="_on_Attacking1_area_entered"]
 [connection signal="area_entered" from="Attacking2" to="." method="_on_Attacking2_area_entered"]
