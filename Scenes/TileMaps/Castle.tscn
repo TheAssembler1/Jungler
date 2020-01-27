@@ -2588,5 +2588,5 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="Castle" type="TileMap"]
 tile_set = SubResource( 84 )
 cell_size = Vector2( 32, 32 )
-collision_mask = 3
+collision_mask = 3079
 format = 1
