@@ -7,7 +7,7 @@
 extents = Vector2( 56.3321, 104.277 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 53.8464, 107.316 )
+extents = Vector2( 107.053, 107.316 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Death"
@@ -195,7 +195,6 @@ custom_styles/bg = SubResource( 9 )
 max_value = 4000.0
 value = 4000.0
 percent_visible = false
-
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Swing" to="." method="_on_Swing_area_entered"]

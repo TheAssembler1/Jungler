@@ -17,6 +17,8 @@ export var game_over_up = 200
 export var button_gameover_distance = 150
 var game_over_y = window_height/2 - 50
 
+export var fps_coins_x = 1750
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -54,6 +56,9 @@ func _ready():
 	$CanvasLayer.get_node("Game_Over").rect_position.x = window_width/2 - ($CanvasLayer.get_node("Game_Over").rect_size.x/2)
 	$CanvasLayer.get_node("Game_Over").rect_position.y = window_height/2 - game_over_up
 	$CanvasLayer.get_node("Game_Over").visible = false
+	
+	$CanvasLayer/FPSCounter.rect_position.x = fps_coins_x
+	$CanvasLayer/Coins.rect_position.x = fps_coins_x
 
 
 

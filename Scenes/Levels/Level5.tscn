@@ -43,11 +43,11 @@ position = Vector2( 945.105, 739.005 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 966.085, 527.779 )
+position = Vector2( 942.285, 527.779 )
 scale = Vector2( 3.06979, 3.14576 )
 z_index = -2
 frames = SubResource( 2 )
-frame = 4
+frame = 2
 speed_scale = 3.0
 playing = true
 
@@ -56,4 +56,5 @@ position = Vector2( 1700, 700 )
 scale = Vector2( 1, 1 )
 z_index = 1
 skeleton_speed = 200
+chasing_distance = 3000
 coin_value = 300
