@@ -165,7 +165,7 @@ margin_right = 1000.0
 margin_bottom = 92.0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "This game was created by TheAssembler1, Nerdwerd, and Goldenharp
+text = "This game was created by TheAssembler1, GoldenHarp, and Nerdwerd.
 
 Created with the Godot Game Engine"
 align = 1

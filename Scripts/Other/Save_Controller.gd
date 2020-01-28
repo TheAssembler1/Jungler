@@ -15,19 +15,19 @@ func _ready():
 	load_game()
 	check_level()
 	
-	coins = 100
+	coins = 0
 	extra_attack_power = 0
 	extra_jump_power = 0
 	extra_speed = 0
-	levels_unlocked = 2
-	current_level = 2
+	levels_unlocked = 1
+	current_level = 1
 	save_game()
 
 func check_game_readiness():
 	var dir = Directory.new()
-	if(!dir.dir_exists("user://Saves")):
-		dir.open("user://")
-		dir.make_dir("user://Saves")
+	if(!dir.dir_exists("res://Saves")):
+		dir.open("res://")
+		dir.make_dir("res://Saves")
 		coins = 0
 		levels_unlocked = 1
 		current_level = 1
@@ -72,7 +72,7 @@ func save():
 	
 func save_game():
 	var save_game = File.new()
-	save_game.open("user://Saves/SAVE.sve", File.WRITE)
+	save_game.open("res://Saves/SAVE.sve", File.WRITE)
 	var node_data = save()
 	save_game.store_line(to_json(node_data))
 	print("___________________________________")
@@ -87,9 +87,9 @@ func save_game():
 	
 func load_game():
 	var save_game = File.new()
-	if not save_game.file_exists("user://Saves/SAVE.sve"):
+	if not save_game.file_exists("res://Saves/SAVE.sve"):
 		return # Error! We don't have a save to load.
-	save_game.open("user://Saves/SAVE.sve", File.READ)
+	save_game.open("res://Saves/SAVE.sve", File.READ)
 	var current_line = {}
 	current_line = parse_json(save_game.get_line())
 	for i in current_line.keys():

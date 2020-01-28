@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Enemies/minotaur-Sheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 56.3321, 104.277 )
+extents = Vector2( 56.3321, 109.75 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 107.053, 107.316 )
@@ -135,7 +135,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 81.8673, 112.89 )
+extents = Vector2( 103.21, 112.89 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.0784314, 0.862745, 0.192157, 1 )
@@ -157,7 +157,7 @@ shape = SubResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 54.6503, 72.0946 )
+position = Vector2( 55.8797, 74.5535 )
 shape = SubResource( 2 )
 
 [node name="Cliff" type="RayCast2D" parent="."]
@@ -181,7 +181,7 @@ frame = 33
 [node name="Swing" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Swing"]
-position = Vector2( -143.133, 77.6691 )
+position = Vector2( -54.6143, 80.128 )
 shape = SubResource( 7 )
 disabled = true
 
