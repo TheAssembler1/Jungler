@@ -16,7 +16,7 @@ extents = Vector2( 12.7507, 17.0728 )
 extents = Vector2( 13.1998, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 12.5594 )
+extents = Vector2( 10, 13.6794 )
 
 [sub_resource type="Animation" id=5]
 length = 0.5
@@ -192,7 +192,6 @@ gravity = 25
 shape = SubResource( 1 )
 
 [node name="Attacking1" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attacking1"]
 position = Vector2( 20.6523, -0.919322 )
@@ -200,7 +199,6 @@ shape = SubResource( 2 )
 disabled = true
 
 [node name="Attacking2" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attacking2"]
 position = Vector2( 20.4363, 3.05476 )

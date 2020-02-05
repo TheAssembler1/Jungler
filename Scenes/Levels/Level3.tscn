@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Other/GUI_Controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Other/Save_Controller.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TileMaps/Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Backgrounds/DemonWoods/City Background.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Other/Question_Controller.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemy/Spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/WorldObjects/Entrance_Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/WorldObjects/Exit_Portal.tscn" type="PackedScene" id=9]
 
 [node name="Level3" type="Node2D"]
 
@@ -25,3 +29,215 @@ tile_data = PoolIntArray( -131071, 52, 0, -131070, 53, 0, -131069, 53, 0, -13106
 position = Vector2( 958.5, 541.125 )
 scale = Vector2( 2.99687, 2.99375 )
 texture = ExtResource( 5 )
+
+[node name="Spikes" parent="." instance=ExtResource( 7 )]
+position = Vector2( 649.575, 687.745 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 691.102, 716.384 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 744.085, 684.881 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 789.908, 684.881 )
+
+[node name="Spikes5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 967.473, 687.745 )
+
+[node name="Spikes6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1013.3, 749.32 )
+
+[node name="Spikes7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1061.98, 717.816 )
+
+[node name="Spikes8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1096.35, 686.313 )
+
+[node name="Spikes9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1228.09, 684.881 )
+
+[node name="Spikes10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1269.62, 717.816 )
+
+[node name="Spikes11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1321.17, 684.881 )
+
+[node name="Spikes12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1369.86, 710.656 )
+
+[node name="Spikes13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1515.92, 687.745 )
+
+[node name="Spikes14" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1563.17, 714.952 )
+
+[node name="Spikes15" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2120.21, 714.952 )
+
+[node name="Spikes16" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2345.03, 782.255 )
+
+[node name="Spikes17" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2386.56, 812.326 )
+
+[node name="Spikes18" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2438.11, 747.888 )
+
+[node name="Spikes19" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2602.78, 873.901 )
+
+[node name="Spikes20" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2664.36, 906.836 )
+
+[node name="Spikes21" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2920.68, 903.973 )
+
+[node name="Spikes22" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3096.82, 942.636 )
+
+[node name="Spikes23" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3330.23, 905.404 )
+
+[node name="Spikes24" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3367.46, 906.836 )
+
+[node name="Spikes25" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3416.15, 939.772 )
+
+[node name="Spikes26" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3461.97, 908.268 )
+
+[node name="Spikes27" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3496.34, 876.765 )
+
+[node name="Spikes28" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3751.23, 905.404 )
+
+[node name="Spikes29" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3795.62, 935.476 )
+
+[node name="Spikes30" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3847.17, 875.333 )
+
+[node name="Spikes31" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4308.87, 941.833 )
+
+[node name="Spikes32" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4360.17, 909.533 )
+
+[node name="Spikes33" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4407.67, 942.783 )
+
+[node name="Spikes34" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4743.97, 907.633 )
+
+[node name="Spikes35" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4807.62, 879.133 )
+
+[node name="Spikes36" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5156.27, 907.633 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes37" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5300.67, 880.083 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes38" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5596.12, 910.483 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes39" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5670.22, 940.883 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes40" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5780.42, 908.583 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes41" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5812.72, 877.233 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes42" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5978.02, 906.683 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes43" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6047.37, 941.833 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes44" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6166.12, 907.633 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes45" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6196.52, 875.333 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes46" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6516.67, 907.633 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes47" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6449.22, 941.833 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes48" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6332.37, 909.533 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes49" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6717.12, 910.483 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes50" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6899.52, 910.483 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes52" parent="." instance=ExtResource( 7 )]
+position = Vector2( 7197.82, 880.083 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes54" parent="." instance=ExtResource( 7 )]
+position = Vector2( 7308.97, 909.533 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes55" parent="." instance=ExtResource( 7 )]
+position = Vector2( 7431.52, 912.383 )
+scale = Vector2( 2.4, 1 )
+
+[node name="Spikes51" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6807.37, 931.383 )
+scale = Vector2( 0.482232, -2.69185 )
+
+[node name="Spikes53" parent="." instance=ExtResource( 7 )]
+position = Vector2( 7384.02, 932.333 )
+scale = Vector2( 0.482232, -2.69185 )
+
+[node name="Question_Controller" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1221.67, 344.44 )
+
+[node name="Question_Controller2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1839.19, 463.269 )
+
+[node name="Question_Controller3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3411.14, 348.336 )
+
+[node name="Question_Controller4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4294.64, 459.373 )
+
+[node name="Question_Controller5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5529.69, 324.96 )
+
+[node name="Question_Controller6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 6452.68, 585.994 )
+
+[node name="Question_Controller7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7198.78, 426.257 )
+
+[node name="Entrance_Portal" parent="." instance=ExtResource( 8 )]
+position = Vector2( 214.847, 155.297 )
+
+[node name="Exit_Portal" parent="." instance=ExtResource( 9 )]
+position = Vector2( 7801.91, 487.771 )
