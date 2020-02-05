@@ -94,7 +94,6 @@ hframes = 8
 frame = 22
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
 collision_layer = 0
 collision_mask = 3
 
@@ -108,6 +107,9 @@ margin_left = -9.51334
 margin_top = -15.2834
 margin_right = 9.48666
 margin_bottom = 24.7166
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Click_Me" type="Label" parent="."]
 margin_left = -75.0

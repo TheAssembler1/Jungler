@@ -29,6 +29,13 @@ onready var player = get_parent().get_node("Player")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	#disabling exit portal
+	get_parent().get_node("Exit_Portal").get_node("TextureButton").disabled = true
+	get_parent().get_node("Exit_Portal").get_node("StaticBody2D").get_node("CollisionShape2D").disabled = true
+	get_parent().get_node("Exit_Portal").get_node("Sprite").visible = false
+	get_parent().get_node("Exit_Portal").get_node("Click_Me").visible = false
+	
+	
 	#adding node to lilskeleton group
 	$Area2D.add_to_group("Minotaur")
 
@@ -121,5 +128,9 @@ func _on_Swing_area_entered(area):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Death":
+		get_parent().get_node("Exit_Portal").get_node("TextureButton").disabled = false
+		get_parent().get_node("Exit_Portal").get_node("StaticBody2D").get_node("CollisionShape2D").disabled = false
+		get_parent().get_node("Exit_Portal").get_node("Sprite").visible = true
+		get_parent().get_node("Exit_Portal").get_node("Click_Me").visible = true
 		queue_free()
 
