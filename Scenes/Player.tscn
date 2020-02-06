@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Player.png" type="Texture" id=2]
-[ext_resource path="res://Sounds/Player/RunningSound.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/Player/FallingSound.wav" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/Player/JumpingSound.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/Swoosh 3-SoundBible.com-1573211927.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Player/RunningSound.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Player/FallingSound.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/Player/JumpingSound.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 16.5 )
@@ -45,6 +46,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, true, false, true, true, true ]
 }
+tracks/2/type = "audio"
+tracks/2/path = NodePath("Sounds/Attacking1Sound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0.16 )
+}
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "value"
@@ -70,6 +85,24 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true, true, true, true, false, true, true, true ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("Sounds/Attacking1Sound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0.1, 0.6 )
 }
 
 [sub_resource type="Animation" id=7]
@@ -213,7 +246,7 @@ position = Vector2( 0, -12 )
 texture = ExtResource( 2 )
 vframes = 16
 hframes = 7
-frame = 68
+frame = 45
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attacking1 = SubResource( 5 )
@@ -244,30 +277,31 @@ smoothing_enabled = true
 [node name="Sounds" type="Node2D" parent="."]
 
 [node name="RunningSound" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = 10.0
 
 [node name="RunningSound2" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = 10.0
-
-[node name="Attacking1Sound" type="AudioStreamPlayer2D" parent="Sounds"]
-volume_db = 10.0
+stream_paused = true
 
 [node name="Attacking2Sound" type="AudioStreamPlayer2D" parent="Sounds"]
 volume_db = 10.0
 
 [node name="FallingSound" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = 10.0
 
 [node name="IdleSound" type="AudioStreamPlayer2D" parent="Sounds"]
 volume_db = 10.0
 
 [node name="JumpingSound" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = 10.0
 pitch_scale = 1.2
+
+[node name="Attacking1Sound" type="AudioStreamPlayer" parent="Sounds"]
+pitch_scale = 1.5
 [connection signal="area_entered" from="GeneralCollision" to="." method="_on_GeneralCollision_area_entered"]
 [connection signal="area_entered" from="Attacking1" to="." method="_on_Attacking1_area_entered"]
 [connection signal="area_entered" from="Attacking2" to="." method="_on_Attacking2_area_entered"]

@@ -240,12 +240,6 @@ func Anim_Sounds():
 	elif !running_sound:
 		$Sounds.get_node("RunningSound").playing = false
 	
-	#attacking1
-	if attacking1_sound && !$Sounds.get_node("Attacking1Sound").playing:
-		$Sounds.get_node("Attacking1Sound").playing = attacking1_sound
-	elif !attacking1_sound:
-		$Sounds.get_node("Attacking1Sound").playing = attacking1_sound
-	
 	#attacking2
 	if attacking2_sound && !$Sounds.get_node("Attacking2Sound").playing:
 		$Sounds.get_node("Attacking2Sound").playing = attacking2_sound
@@ -331,4 +325,3 @@ func _on_Attacking2_area_entered(area):
 	elif area.is_in_group("Minotaur"):
 		#giving damage to the player
 		area.get_parent().object_health -= minotaur_attacking2_damage	
-
