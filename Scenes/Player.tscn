@@ -183,8 +183,8 @@ border_color = Color( 0, 0, 0, 1 )
 scale = Vector2( 2, 2 )
 z_index = 1
 script = ExtResource( 1 )
-player_jump_power = 800
-gravity = 25
+player_jump_power = 1000
+gravity = 35
 
 [node name="GeneralCollision" type="Area2D" parent="."]
 

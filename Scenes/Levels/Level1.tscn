@@ -46,6 +46,7 @@ position = Vector2( -465.744, -226.578 )
 position = Vector2( 109.575, 920.562 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
 position = Vector2( 980.552, 542.024 )
