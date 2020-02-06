@@ -141,7 +141,6 @@ func _ready():
 	
 
 func _on_Play_button_up():
-	if !back_able:
 		if $Save_Controller.current_level == 1:
 			var success = get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
 			if success == 0:

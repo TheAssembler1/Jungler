@@ -4,7 +4,7 @@ extends KinematicBody2D
 export var gravity = 8
 export var skeleton_speed = 70
 export var attack_damage = 200
-export var object_health = 1000
+export var object_health = 500
 var motion = Vector2()
 var normal_floor = Vector2()
 
@@ -29,7 +29,7 @@ onready var player = get_parent().get_node("Player")
 func _ready():
 	
 	#adding node to lilskeleton group
-	$Area2D.add_to_group("BigSkeleton")
+	$Area2D.add_to_group("LilSkeleton")
 
 #called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
