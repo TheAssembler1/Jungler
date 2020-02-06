@@ -9,7 +9,7 @@ var button_height = 50
 var button_distance = 70
 
 export var paused  = false
-export var canportal = false
+export var canportal = true
 
 var mod = 0
 export var mod_speed = .007
