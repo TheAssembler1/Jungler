@@ -5,7 +5,7 @@ var window_height = 1080
 
 var button_width = 250
 var button_height = 50
-var button_distance = 70
+var button_distance = 75
 
 var back_button_offset = 5
 
@@ -29,6 +29,9 @@ var coin_text_offset = 200
 var shop_bar_offset = -150
 var shop_bar_width = 250
 var shop_bar_height = 50
+
+var title_x = (window_width/2)
+var title_y = 150
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -138,6 +141,9 @@ func _ready():
 	$SpeedBar.max_value = max_speed
 	$JumpBar.max_value = max_jump
 	$AttackBar.max_value = max_attack
+	
+	$Title.position.x = title_x
+	$Title.position.y = title_y
 	
 
 func _on_Play_button_up():
