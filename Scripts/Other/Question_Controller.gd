@@ -1,6 +1,6 @@
 extends Node2D
 
-export var button_width = 350
+export var button_width = 250
 export var button_height = 50
 export var button_distance_y = 70
 export var button_distance_x = 200
@@ -187,8 +187,8 @@ var questions =["Who serves as the Executive Assistant to the president for FBLA
 				"Is the FBLA-PBL National Center mortgage Retired?", \
 				"2", \
 				"1", \
-				"true", \
-				"false", \
+				"True", \
+				"False", \
 				"", \
 				"", \
 				\
@@ -203,16 +203,16 @@ var questions =["Who serves as the Executive Assistant to the president for FBLA
 				"Did the board of directors approve the establishment of the FBLA-PBL Alumni division?", \
 				"2", \
 				"1", \
-				"true", \
-				"false", \
+				"True", \
+				"False", \
 				"", \
 				"", \
 				\
 				"Edward D. Miller is not the full-time executive director.", \
 				"2", \
 				"2", \
-				"true", \
-				"false", \
+				"True", \
+				"False", \
 				"", \
 				"", \
 				\
@@ -235,8 +235,8 @@ var questions =["Who serves as the Executive Assistant to the president for FBLA
 				"Brenda Merkel is the PBL adviser presentation college of the Mountain plains regions.", \
 				"2", \
 				"1", \
-				"true", \
-				"false", \
+				"True", \
+				"False", \
 				"", \
 				"", \
 				\
@@ -251,8 +251,8 @@ var questions =["Who serves as the Executive Assistant to the president for FBLA
 				"Does FLBA have an instagram?", \
 				"2", \
 				"1", \
-				"true", \
-				"false", \
+				"True", \
+				"False", \
 				"", \
 				"", \
 				\
@@ -331,8 +331,8 @@ var questions =["Who serves as the Executive Assistant to the president for FBLA
 				"Is FBLA primarily funded by Memebership Dues?", \
 				"2", \
 				"1", \
-				"true", \
-				"false", \
+				"True", \
+				"False", \
 				"", \
 				"", \
 				\
@@ -395,8 +395,8 @@ var questions =["Who serves as the Executive Assistant to the president for FBLA
 				"Is Tommorow's Business Leader the name of the publication for FBLA High School and Middle School?", \
 				"2", \
 				"1", \
-				"true", \
-				"false", \
+				"True", \
+				"False", \
 				"", \
 				"", \
 				\
@@ -411,8 +411,8 @@ var questions =["Who serves as the Executive Assistant to the president for FBLA
 				"NBEA stands for National busness Education Associates", \
 				"2", \
 				"2", \
-				"true", \
-				"false", \
+				"True", \
+				"False", \
 				"", \
 				""]
 				
