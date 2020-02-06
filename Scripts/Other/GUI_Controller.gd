@@ -9,6 +9,7 @@ var button_height = 50
 var button_distance = 70
 
 export var paused  = false
+export var canportal = false
 
 var mod = 0
 export var mod_speed = .007
@@ -103,6 +104,7 @@ func _process(delta):
 
 func _on_Pause_button_up():
 	if !get_parent().get_node("Player").game_over:
+		canportal = false
 		get_tree().paused = true
 		paused = true
 		$CanvasLayer.get_node("Pause").visible = false
@@ -127,6 +129,7 @@ func _on_Exit_button_up():
 
 func _on_Resume_button_up():
 	if paused:
+		canportal = true
 		get_tree().paused = false
 		paused = false
 		$CanvasLayer.get_node("Pause").visible = true

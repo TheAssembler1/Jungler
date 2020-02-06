@@ -23,29 +23,31 @@ func _ready():
 
 func _on_TextureButton_button_up():
 	
-	pressed *= -1
-	
-	print("HELLO WORLD")
-	
-	if get_parent().get_node("Save_Controller").current_level == 1:
-		if get_parent().get_node("Save_Controller").levels_unlocked < 2:
-			print("LEVELS UNLOCKED::"+String(get_parent().get_node("Save_Controller").current_level))
-			get_parent().get_node("Save_Controller").levels_unlocked = 2
-		get_parent().get_node("Save_Controller").call("save_game")
-	elif get_parent().get_node("Save_Controller").current_level == 2:
-		if get_parent().get_node("Save_Controller").levels_unlocked < 3:
-			print("LEVELS UNLOCKED::"+String(get_parent().get_node("Save_Controller").current_level))
-			get_parent().get_node("Save_Controller").levels_unlocked = 3
-	elif get_parent().get_node("Save_Controller").current_level == 3:
-		if get_parent().get_node("Save_Controller").levels_unlocked < 4:
-			print("LEVELS UNLOCKED::"+String(get_parent().get_node("Save_Controller").current_level))
-			get_parent().get_node("Save_Controller").levels_unlocked = 4
-		get_parent().get_node("Save_Controller").call("save_game")
-	elif get_parent().get_node("Save_Controller").current_level == 4:
-		if get_parent().get_node("Save_Controller").levels_unlocked < 5:
-			print("LEVELS UNLOCKED::"+String(get_parent().get_node("Save_Controller").current_level))
-			get_parent().get_node("Save_Controller").levels_unlocked = 5
-		get_parent().get_node("Save_Controller").call("save_game")
+	if  get_parent().get_node("GUI_Controller").canportal:
+		
+		pressed *= -1
+		
+		print("HELLO WORLD")
+		
+		if get_parent().get_node("Save_Controller").current_level == 1:
+			if get_parent().get_node("Save_Controller").levels_unlocked < 2:
+				print("LEVELS UNLOCKED::"+String(get_parent().get_node("Save_Controller").current_level))
+				get_parent().get_node("Save_Controller").levels_unlocked = 2
+			get_parent().get_node("Save_Controller").call("save_game")
+		elif get_parent().get_node("Save_Controller").current_level == 2:
+			if get_parent().get_node("Save_Controller").levels_unlocked < 3:
+				print("LEVELS UNLOCKED::"+String(get_parent().get_node("Save_Controller").current_level))
+				get_parent().get_node("Save_Controller").levels_unlocked = 3
+		elif get_parent().get_node("Save_Controller").current_level == 3:
+			if get_parent().get_node("Save_Controller").levels_unlocked < 4:
+				print("LEVELS UNLOCKED::"+String(get_parent().get_node("Save_Controller").current_level))
+				get_parent().get_node("Save_Controller").levels_unlocked = 4
+			get_parent().get_node("Save_Controller").call("save_game")
+		elif get_parent().get_node("Save_Controller").current_level == 4:
+			if get_parent().get_node("Save_Controller").levels_unlocked < 5:
+				print("LEVELS UNLOCKED::"+String(get_parent().get_node("Save_Controller").current_level))
+				get_parent().get_node("Save_Controller").levels_unlocked = 5
+			get_parent().get_node("Save_Controller").call("save_game")
 	
 	if pressed == 1:
 		if get_parent().get_node("Save_Controller").levels_unlocked == 1:
@@ -123,20 +125,22 @@ func _on_Level5_button_up():
 
 
 func _on_TextureButton_button_down():
-	if pressed == 1:
-		$AnimationPlayer.play("Clicked")
-		$Click_Me.text = "Click Portal To Change Worlds"
-		get_parent().get_node("GUI_Controller").get_node("CanvasLayer").get_node("Pause").visible = true
-		get_parent().get_node("GUI_Controller").get_node("CanvasLayer").get_node("Pause").disabled = false
-		get_parent().get_node("GUI_Controller").paused = true
-		get_tree().paused = false
-	else:
-		$AnimationPlayer.play("Clicked")
-		$Click_Me.text = "Click Portal To Resume Game"
-		get_parent().get_node("GUI_Controller").get_node("CanvasLayer").get_node("Pause").visible = false
-		get_parent().get_node("GUI_Controller").get_node("CanvasLayer").get_node("Pause").disabled = true
-		get_parent().get_node("GUI_Controller").paused = false
-		get_tree().paused = true
+	
+	if  get_parent().get_node("GUI_Controller").canportal:
+		if pressed == 1:
+			$AnimationPlayer.play("Clicked")
+			$Click_Me.text = "Click Portal To Change Worlds"
+			get_parent().get_node("GUI_Controller").get_node("CanvasLayer").get_node("Pause").visible = true
+			get_parent().get_node("GUI_Controller").get_node("CanvasLayer").get_node("Pause").disabled = false
+			get_parent().get_node("GUI_Controller").paused = true
+			get_tree().paused = false
+		else:
+			$AnimationPlayer.play("Clicked")
+			$Click_Me.text = "Click Portal To Resume Game"
+			get_parent().get_node("GUI_Controller").get_node("CanvasLayer").get_node("Pause").visible = false
+			get_parent().get_node("GUI_Controller").get_node("CanvasLayer").get_node("Pause").disabled = true
+			get_parent().get_node("GUI_Controller").paused = false
+			get_tree().paused = true
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
