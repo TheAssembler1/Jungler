@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Other/Save_Controller.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Enemy/LilSkeleton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Enemy/Minotaur.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemy/Wolf.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -40,26 +40,11 @@ position = Vector2( 1331.93, 801.769 )
 [node name="LilSkeleton2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 151.744, 613.858 )
 
-[node name="LilSkeleton3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 302.837, 788.694 )
+[node name="Wolf" parent="." instance=ExtResource( 6 )]
+position = Vector2( 441.493, 570.985 )
 
-[node name="LilSkeleton4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 43.8201, 870.716 )
+[node name="Wolf2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 886.139, 575.302 )
 
-[node name="LilSkeleton5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 367.591, 654.869 )
-
-[node name="LilSkeleton6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1401.5, 687.246 )
-
-[node name="LilSkeleton7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1075.57, 777.902 )
-
-[node name="LilSkeleton8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 993.547, 575.006 )
-
-[node name="LilSkeleton9" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1354.01, 605.224 )
-
-[node name="Minotaur" parent="." instance=ExtResource( 6 )]
-position = Vector2( 240.756, 616.313 )
+[node name="Wolf3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 998.38, 646.532 )

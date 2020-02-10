@@ -47,6 +47,11 @@ export var bigskeleton_body_attack_damage = 500
 export var bigskeleton_attacking1_damage = 3000
 export var bigskeleton_attacking2_damage = 2500
 
+#damage var for Wolf
+export var wolf_body_attack_damage = 10
+export var wolf_attacking1_damage = 3000
+export var wolf_attacking2_damage = 2500
+
 #damage var for Minotaur
 export var minotaur_body_attack_damage = 0
 export var minotaur_attacking1_damage = 3000
@@ -288,6 +293,9 @@ func _on_GeneralCollision_area_entered(area):
 		
 		#taking health from the lilskeleton
 		area.get_parent().object_health -= bigskeleton_body_attack_damage
+	elif area.is_in_group("Wolf"):
+		area.get_parent().object_health -= wolf_body_attack_damage
+		
 	elif area.is_in_group("Minotaur"):
 		
 		#taking health from the lilskeleton
@@ -304,6 +312,8 @@ func _on_Attacking1_area_entered(area):
 	elif area.is_in_group("BigSkeleton"):
 		#giving damage to the player
 		area.get_parent().object_health -= bigskeleton_attacking1_damage + get_parent().get_node("Save_Controller").extra_attack_power
+	elif area.is_in_group("Wolf"):
+		area.get_parent().object_health -= wolf_attacking1_damage + get_parent().get_node("Save_Controller").extra_attack_power
 	elif area.is_in_group("Minotaur"):
 		#giving damage to the player
 		area.get_parent().object_health -= minotaur_attacking1_damage + get_parent().get_node("Save_Controller").extra_attack_power
@@ -322,6 +332,8 @@ func _on_Attacking2_area_entered(area):
 	elif area.is_in_group("BigSkeleton"):
 		#giving damage to the player
 		area.get_parent().object_health -= bigskeleton_attacking2_damage
+	elif area.is_in_group("Wolf"):
+		area.get_parent().object_health -= wolf_attacking2_damage
 	elif area.is_in_group("Minotaur"):
 		#giving damage to the player
 		area.get_parent().object_health -= minotaur_attacking2_damage	
