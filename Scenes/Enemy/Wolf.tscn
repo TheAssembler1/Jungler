@@ -9,7 +9,7 @@ extents = Vector2( 59.5967, 43.1917 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 63.8823, 45.3028 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=3]
 resource_name = "Death"
 length = 2.0
 tracks/0/type = "value"
@@ -73,7 +73,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "Idle"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -88,7 +88,7 @@ tracks/0/keys = {
 "values": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 29 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "Moving"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -103,7 +103,7 @@ tracks/0/keys = {
 "values": [ 36, 37, 38, 39, 40, 41, 42, 43 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "Swing"
 length = 2.0
 tracks/0/type = "value"
@@ -125,19 +125,19 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.9, 1.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false, true ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 44.733, 42.7015 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.0784314, 0.862745, 0.192157, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.858824, 0.0352941, 0.0352941, 1 )
 
 [node name="Wolf" type="KinematicBody2D"]
@@ -163,10 +163,10 @@ enabled = true
 collision_mask = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Death = SubResource( 9 )
-anims/Idle = SubResource( 6 )
-anims/Moving = SubResource( 7 )
-anims/Swing = SubResource( 8 )
+anims/Death = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/Moving = SubResource( 5 )
+anims/Swing = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1.43051e-006, 0 )
@@ -174,13 +174,12 @@ scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 18
-frame = 15
 
 [node name="Swing" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Swing"]
 position = Vector2( 106.564, 5.37878 )
-shape = SubResource( 3 )
+shape = SubResource( 7 )
 disabled = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -188,8 +187,8 @@ margin_left = -60.7504
 margin_top = -112.749
 margin_right = 131.25
 margin_bottom = -90.7492
-custom_styles/fg = SubResource( 4 )
-custom_styles/bg = SubResource( 5 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
 max_value = 2000.0
 value = 2000.0
 percent_visible = false

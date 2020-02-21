@@ -15,7 +15,7 @@ export var mod_change = .01
 
 
 export var chasing_distance = 800
-export var hitting_distance = 50
+export var hitting_distance = 40
 export var coin_value = 50
 
 var cliff = false
@@ -31,7 +31,6 @@ onready var player = get_parent().get_node("Player")
 func _ready():
 	#adding node to lilskeleton group
 	$Area2D.add_to_group("Wolf")
-	$Swing.add_to_group("Wolf")
 
 #called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
