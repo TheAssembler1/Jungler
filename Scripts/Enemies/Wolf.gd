@@ -30,7 +30,7 @@ onready var player = get_parent().get_node("Player")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#adding node to lilskeleton group
-	$Area2D.add_to_group("Wolf")
+	$Attack.add_to_group("Wolf")
 
 #called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -70,11 +70,11 @@ func Follow_Player():
 		cliff = false
 		if position.x < player.position.x:
 			$Sprite.flip_h = false
-			$Swing.scale.x = -1
+			$Attack.scale.x = 1
 			motion.x = skeleton_speed
 		elif position.x > player.position.x:
 			$Sprite.flip_h = true
-			$Swing.scale.x = 1
+			$Attack.scale.x = -1
 			motion.x = -skeleton_speed
 	else:
 		cliff = true
@@ -100,21 +100,8 @@ func Follow_Player():
 		#actually moves the player
 		motion = move_and_slide(motion, normal_floor)
 
-func _on_Area2D_area_entered(area):
-	
-	#checking if we collide with player
+
+func _on_Attack_area_entered(area):
 	if area.is_in_group("Player"):
-		
 		#giving damage to the player
 		area.get_parent().object_health -= attack_damage
-
-
-func _on_Swing_area_entered(area):
-	if area.is_in_group("Player"):
-		
-		#giving damage to the player
-		area.get_parent().object_health -= attack_damage
-	pass # Replace with function body.
-
-
-

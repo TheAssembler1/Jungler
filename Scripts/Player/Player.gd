@@ -63,6 +63,7 @@ var has_died = false
 #called when the node enters the scene tree for the first time.
 func _ready():
 	#adding to playing group
+	add_to_group("Player")
 	$GeneralCollision.add_to_group("Player")
 	if boss_stage:
 		$Camera2D.queue_free()
